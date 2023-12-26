@@ -112,34 +112,40 @@ packer.startup({
 		-- use("EdenEast/nightfox.nvim")
 		--------------------- LSP --------------------
 		-- use({ "williamboman/nvim-lsp-installer" })
-		use({
-			"neovim/nvim-lspconfig",
-			config = function()
-				-- https://github.com/neovim/nvim-lspconfig/issues/888#issuecomment-1479009785
-				require("lspconfig").gopls.setup({
-					-- https://stackoverflow.com/a/73289654
-					on_attach = require("cmp").on_attach,
-					settings = {
-						gopls = {
-							buildFlags = { "-tags=ems bsc cht rakuten taipower wireinject" },
-						},
-					},
-				})
-				require("lspconfig").pyright.setup({})
-				require("lspconfig").jdtls.setup({})
-				-- require('lspconfig').sqlls.setup{}
-			end,
-		})
+		use("hrsh7th/cmp-nvim-lsp")
+		use("neovim/nvim-lspconfig")
+		-- use({
+		-- 	"neovim/nvim-lspconfig",
+		-- 	config = function()
+		-- 		-- https://github.com/neovim/nvim-lspconfig/issues/888#issuecomment-1479009785
+		-- 		require("lspconfig").gopls.setup({
+		-- 			-- https://stackoverflow.com/a/73289654
+		-- 			on_attach = require("cmp").on_attach,
+		-- 			settings = {
+		-- 				gopls = {
+		-- 					buildFlags = { "-tags=ems bsc cht rakuten taipower wireinject" },
+		-- 				},
+		-- 			},
+		-- 		})
+		-- 		require("lspconfig").pyright.setup({})
+		-- 		require("lspconfig").jdtls.setup({})
+		-- 		-- require('lspconfig').sqlls.setup{}
+		-- 	end,
+		-- })
+
 		use("mfussenegger/nvim-jdtls")
 		use("ray-x/lsp_signature.nvim")
 		use("hrsh7th/nvim-cmp")
-		use("hrsh7th/vim-vsnip")
+		-- use("hrsh7th/vim-vsnip")
 		use("vim-scripts/dbext.vim")
 		-- use("hrsh7th/cmp-vsnip")
 		-- use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }
-		-- use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
-		-- use("hrsh7th/cmp-path") -- { name = 'path' }
-		-- use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
+		use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
+		use("hrsh7th/cmp-path") -- { name = 'path' }
+		use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
+		--
+		use("hrsh7th/cmp-vsnip")
+		use("hrsh7th/vim-vsnip")
 		-- use("hrsh7th/cmp-nvim-lsp-signature-help") -- { name = 'nvim_lsp_signature_help' }
 		use("rafamadriz/friendly-snippets")
 		-- ui

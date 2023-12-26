@@ -48,9 +48,10 @@ vim.g.go_gopls_gofumpt = 1
 
 local map = vim.api.nvim_set_keymap
 local opt = { noremap = true, silent = true }
-map("i", "<tab>", "<C-R>=v:lua.tab_complete()<CR>", opt)
-map("i", "<s-tab>", "<C-R>=v:lua.s_tab_complete()<CR>", opt)
-map("i", "<enter>", "<C-R>=v:lua.enter_key()<CR>", opt)
+-- map("i", "<tab>", "<C-R>=v:lua.tab_complete()<CR>", opt)
+-- map("i", "<s-tab>", "<C-R>=v:lua.s_tab_complete()<CR>", opt)
+-- map("i", "<enter>", "<C-R>=v:lua.enter_key()<CR>", opt)
 map("n", "gr", "<cmd>Lspsaga lsp_finder<CR>", opt)
+map("n", "re", "<cmd>Lspsaga rename<CR>", opt)
 -- map("n", "gr", "vim.lsp.buf.references", opt)
 -- map('n', 'gr', '<Plug>(go-referrers)', opt)

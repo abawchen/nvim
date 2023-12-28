@@ -30,4 +30,13 @@ lspsaga.setup({
 			quit = "<ESC>",
 		},
 	},
+	-- need to close or finder will not work
+	outline = {
+		close_after_jump = true,
+		keys = {
+			toggle_or_jump = "<CR>",
+			quit = "<ESC>",
+			jump = "e",
+		},
+	},
 })

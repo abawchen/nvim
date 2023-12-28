@@ -127,7 +127,8 @@ packer.startup({
 		use("rafamadriz/friendly-snippets")
 		-- ui
 		use("onsails/lspkind-nvim")
-		use("kkharji/lspsaga.nvim")
+		-- use("kkharji/lspsaga.nvim")
+		use("nvimdev/lspsaga.nvim")
 		-- formatter
 		use("mhartington/formatter.nvim")
 		use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })

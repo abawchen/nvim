@@ -23,7 +23,8 @@ null_ls.setup({
 		null_ls.builtins.formatting.golines.with({
 			extra_args = { "-m", 120 },
 		}),
-		-- null_ls.builtins.formatting.gofumpt,
+		null_ls.builtins.formatting.gofumpt,
+
 		-- null_ls.builtins.completion.spell,
 		-- null_ls.builtins.diagnostics.flake8,
 	},

@@ -4,53 +4,30 @@ if not status then
 	return
 end
 
--- https://github.com/kkharji/lspsaga.nvim
-lspsaga.setup({ -- defaults ...
-	debug = false,
-	use_saga_diagnostic_sign = true,
-	-- diagnostic sign
-	error_sign = "",
-	warn_sign = "",
-	hint_sign = "",
-	-- hint_sign = "",
-	infor_sign = "",
-	diagnostic_header_icon = "   ",
-	-- code_action_icon = " ",
-	code_action_icon = "⚡",
-	code_action_prompt = {
-		enable = true,
-		sign = true,
-		sign_priority = 40,
-		virtual_text = true,
+-- https://github.com/nvimdev/lspsaga.nvim/blob/e71cddc9d4c1dd97c026814777b810df988daed2/lua/lspsaga/init.lua
+-- https://github.com/nvimdev/lspsaga.nvim/issues/458
+lspsaga.setup({
+	ui = {
+		border = "rounded",
+		devicon = true,
+		foldericon = true,
+		title = true,
+		expand = "⊞",
+		collapse = "⊟",
+		code_action = "💡",
+		actionfix = " ",
+		lines = { "┗", "┣", "┃", "━", "┏" },
+		kind = nil,
+		imp_sign = "󰳛 ",
 	},
-	finder_definition_icon = "  ",
-	finder_reference_icon = "  ",
-	max_preview_lines = 10,
-	finder_action_keys = {
-		open = "<CR>",
-		vsplit = "s",
-		split = "i",
-		quit = "<ESC>",
-		scroll_down = "<C-f>",
-		scroll_up = "<C-b>",
+	symbol_in_winbar = {
+		folder_level = 10,
 	},
-	code_action_keys = {
-		quit = "<ESC>",
-		exec = "<CR>",
+	finder = {
+		layout = "normal",
+		keys = {
+			toggle_or_open = "<CR>",
+			quit = "<ESC>",
+		},
 	},
-	rename_action_keys = {
-		quit = "<C-c>",
-		exec = "<CR>",
-	},
-	definition_preview_icon = "  ",
-	border_style = "single",
-	rename_prompt_prefix = "➤",
-	rename_output_qflist = {
-		enable = false,
-		auto_open_qflist = false,
-	},
-	server_filetype_map = {},
-	diagnostic_prefix_format = "%d. ",
-	diagnostic_message_format = "%m %c",
-	highlight_prefix = false,
 })

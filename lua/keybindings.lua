@@ -166,11 +166,12 @@ map("v", "<C-_>", "gcc", { noremap = false })
 
 -- lsp, lspsaga
 -- https://stackoverflow.com/a/74584098
--- https://zhuanlan.zhihu.com/p/573556512
+-- https://github.com/nvimdev/lspsaga.nvim
 map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
 map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
-map("n", "gr", "<cmd>Lspsaga lsp_finder<CR>", opt)
+map("n", "gi", "<cmd>Lspsaga finder imp<CR>", opt)
+map("n", "gr", "<cmd>Lspsaga finder ref<CR>", opt)
 map("n", "re", "<cmd>Lspsaga rename<CR>", opt)
 map("n", "ca", "<cmd>Lspsaga code_action<CR>", opt)
 map("i", "<tab>", "<C-R>=v:lua.tab_complete()<CR>", opt)

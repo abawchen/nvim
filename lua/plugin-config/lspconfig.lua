@@ -127,3 +127,15 @@ nvim_lsp["lua_ls"].setup({
 		return true
 	end,
 })
+
+-- lsp_signature
+-- https://github.com/ray-x/lsp_signature.nvim?tab=readme-ov-file#full-configuration-with-default-values
+require("lsp_signature").setup({
+	bind = true, -- This is mandatory, otherwise border config won't get registered.
+	handler_opts = {
+		border = "rounded",
+	},
+	toggle_key = { "<C-x>" },
+	auto_close_after = 10,
+	floating_window = false,
+})

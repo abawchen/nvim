@@ -67,3 +67,12 @@ vim.cmd([[highlight ExtraWhitespace ctermbg=red guibg=red]])
 vim.cmd([[match ExtraWhitespace /\s\+$/]])
 
 -- vim.g.deoplete.enable_at_startup = 1
+--
+-- golang
+vim.g.go_fmt_autosave = 1
+vim.g.go_fmt_command = "gopls"
+vim.g.go_gopls_gofumpt = 1
+-- vim.g.go_fmt_command = "golines"
+-- vim.g.go_fmt_options = {
+-- 	golines = "-m 120",
+-- }

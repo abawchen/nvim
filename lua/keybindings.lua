@@ -2,8 +2,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 local opt = {
-  noremap = true,
-  silent = true,
+	noremap = true,
+	silent = true,
 }
 
 local map = vim.api.nvim_set_keymap
@@ -134,28 +134,28 @@ map("n", "<leader>tt", "<cmd>TroubleToggle<CR>", opt)
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
 map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
 pluginKeys.telescopeList = {
-  i = {
-    ["<C-j>"] = "move_selection_next",
-    ["<C-k>"] = "move_selection_previous",
-    ["<C-n>"] = "move_selection_next",
-    ["<C-p>"] = "move_selection_previous",
-    ["<C-c>"] = "close",
-    ["<C-u>"] = "preview_scrolling_up",
-    ["<C-d>"] = "preview_scrolling_down",
-  },
+	i = {
+		["<C-j>"] = "move_selection_next",
+		["<C-k>"] = "move_selection_previous",
+		["<C-n>"] = "move_selection_next",
+		["<C-p>"] = "move_selection_previous",
+		["<C-c>"] = "close",
+		["<C-u>"] = "preview_scrolling_up",
+		["<C-d>"] = "preview_scrolling_down",
+	},
 }
 
 -- comment, see ./lua/plugin-config/comment.lua
 pluginKeys.comment = {
-  toggler = {
-    line = "gcc", -- by line
-    block = "gbc", -- by block
-  },
-  -- Visual mode
-  opleader = {
-    line = "gc",
-    bock = "gb",
-  },
+	toggler = {
+		line = "gcc", -- by line
+		block = "gbc", -- by block
+	},
+	-- Visual mode
+	opleader = {
+		line = "gc",
+		bock = "gb",
+	},
 }
 -- ctrl + /
 map("n", "<C-/>", "gcc", { noremap = false })
@@ -164,15 +164,21 @@ map("v", "<C-/>", "gcc", { noremap = false })
 map("n", "<C-_>", "gcc", { noremap = false })
 map("v", "<C-_>", "gcc", { noremap = false })
 
--- lsp
+-- lsp, lspsaga
 -- https://stackoverflow.com/a/74584098
+-- https://zhuanlan.zhihu.com/p/573556512
 map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
+map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
 map("n", "gr", "<cmd>Lspsaga lsp_finder<CR>", opt)
+map("n", "re", "<cmd>Lspsaga rename<CR>", opt)
+map("n", "ca", "<cmd>Lspsaga code_action<CR>", opt)
+map("i", "<tab>", "<C-R>=v:lua.tab_complete()<CR>", opt)
+map("i", "<s-tab>", "<C-R>=v:lua.s_tab_complete()<CR>", opt)
+map("i", "<enter>", "<C-R>=v:lua.enter_key()<CR>", opt)
 
 -- jq
 map("n", "jq", "<cmd>%!jq<CR>", opt)
 -- map("v", "jq", "<cmd>%!jq<CR>", opt)
-
 
 return pluginKeys

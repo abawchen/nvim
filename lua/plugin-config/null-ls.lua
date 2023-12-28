@@ -20,10 +20,10 @@ null_ls.setup({
 		null_ls.builtins.formatting.jq,
 		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.formatting.sqlformat,
-		-- null_ls.builtins.formatting.gofumpt,
 		null_ls.builtins.formatting.golines.with({
 			extra_args = { "-m", 120 },
 		}),
+		-- null_ls.builtins.formatting.gofumpt,
 		-- null_ls.builtins.completion.spell,
 		-- null_ls.builtins.diagnostics.flake8,
 	},
@@ -35,7 +35,6 @@ null_ls.setup({
 				buffer = bufnr,
 				callback = function()
 					vim.lsp.buf.format()
-					-- vim.lsp.buf.format()
 				end,
 			})
 		end

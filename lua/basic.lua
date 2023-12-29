@@ -66,8 +66,6 @@ vim.g.loaded_python3_provider = 0
 vim.cmd([[highlight ExtraWhitespace ctermbg=red guibg=red]])
 vim.cmd([[match ExtraWhitespace /\s\+$/]])
 
--- vim.g.deoplete.enable_at_startup = 1
---
 -- golang
 vim.g.go_fmt_autosave = 1
 vim.g.go_fmt_command = "gopls"

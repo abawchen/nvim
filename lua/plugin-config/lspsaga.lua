@@ -32,6 +32,15 @@ lspsaga.setup({
 			quit = "<ESC>",
 		},
 	},
+	rename = {
+		in_select = false,
+		auto_save = true,
+		keys = {
+			quit = "<ESC>",
+			exec = "<CR>",
+			select = "x",
+		},
+	},
 	-- need to close or finder will not work
 	outline = {
 		close_after_jump = true,

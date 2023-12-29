@@ -95,27 +95,27 @@ map("n", "Z", ":foldopen<CR>", opt)
 
 -- nvim-tree
 map("n", "<leader>m", ":NvimTreeToggle<CR>", opt)
--- pluginKeys.nvimTreeList = {
---   -- https://docs.rockylinux.org/books/nvchad/nvchad_ui/nvimtree/
---   { key = "s", action = "system_open" },
---   { key = ".", action = "toggle_dotfiles" },
---   { key = { "o", "<2-LeftMouse>" }, action = "edit" },
---   { key = "v", action = "vsplit" },
---   { key = "h", action = "split" },
---   { key = "i", action = "toggle_ignored" },
---   { key = "R", action = "refresh" },
---   { key = "a", action = "create" },
---   { key = "d", action = "remove" },
---   { key = "r", action = "rename" },
---   { key = "x", action = "cut" },
---   { key = "c", action = "copy" },
---   { key = "p", action = "paste" },
---   { key = "y", action = "copy_name" },
---   { key = "Y", action = "copy_path" },
---   { key = "gy", action = "copy_absolute_path" },
---   { key = { "]" }, action = "cd" },
---   { key = { "[" }, action = "dir_up" },
--- }
+pluginKeys.nvimTreeList = {
+	-- -- https://docs.rockylinux.org/books/nvchad/nvchad_ui/nvimtree/
+	-- { key = "s", action = "system_open" },
+	-- { key = ".", action = "toggle_dotfiles" },
+	-- { key = { "o", "<2-LeftMouse>" }, action = "edit" },
+	-- { key = "v", action = "vsplit" },
+	-- { key = "h", action = "split" },
+	-- { key = "i", action = "toggle_ignored" },
+	-- { key = "R", action = "refresh" },
+	-- { key = "a", action = "create" },
+	-- { key = "d", action = "remove" },
+	-- { key = "r", action = "rename" },
+	-- { key = "x", action = "cut" },
+	-- { key = "c", action = "copy" },
+	-- { key = "p", action = "paste" },
+	-- { key = "y", action = "copy_name" },
+	-- { key = "Y", action = "copy_path" },
+	-- { key = "gy", action = "copy_absolute_path" },
+	-- { key = { "]" }, action = "cd" },
+	-- { key = { "[" }, action = "dir_up" },
+}
 
 -- bufferline
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)

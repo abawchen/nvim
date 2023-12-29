@@ -18,6 +18,7 @@ local function on_attach(bufnr)
 	local function opts(desc)
 		return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
 	end
+
 	vim.keymap.set("n", "<CR>", float_close_wrap(api.node.open.edit), opts("Open"))
 	vim.keymap.set("n", "<Tab>", float_close_wrap(api.node.open.preview), opts("Open"))
 	vim.keymap.set("n", "[", api.tree.change_root_to_parent, opts("Up"))
@@ -36,8 +37,9 @@ local function on_attach(bufnr)
 	vim.keymap.set("n", "R", float_close_wrap(api.tree.reload), opts("Refresh"))
 	vim.keymap.set("n", "s", float_close_wrap(api.node.run.system), opts("Run System"))
 	vim.keymap.set("n", "x", float_close_wrap(api.fs.cut), opts("Cut"))
-	vim.keymap.set("n", "y", float_close_wrap(api.fs.copy.flename), opts("Copy Name"))
-	vim.keymap.set("n", "Y", float_close_wrap(api.fs.copy.relative_path), opts("Copy Relative Path"))
+	vim.keymap.set("n", "y", float_close_wrap(api.fs.copy.filename), opts("Copy Name"))
+	vim.keymap.set("n", "cr", float_close_wrap(api.fs.copy.relative_path), opts("Copy Relative Path"))
+	vim.keymap.set("n", "ca", float_close_wrap(api.fs.copy.absolute_path), opts("Copy Absolute Path"))
 end
 
 nvim_tree.setup({

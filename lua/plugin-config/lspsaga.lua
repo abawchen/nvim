@@ -6,6 +6,8 @@ end
 
 -- https://github.com/nvimdev/lspsaga.nvim/blob/e71cddc9d4c1dd97c026814777b810df988daed2/lua/lspsaga/init.lua
 -- https://github.com/nvimdev/lspsaga.nvim/issues/458
+-- XXX: modify icon
+-- /home/abawchen/.local/share/nvim/site/pack/packer/start/lspsaga.nvim/lua/lspsaga/lspkind.lua
 lspsaga.setup({
 	ui = {
 		border = "rounded",

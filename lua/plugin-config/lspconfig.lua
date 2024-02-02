@@ -85,6 +85,7 @@ nvim_lsp["gopls"].setup({
 				unusedparams = true,
 				shadow = true,
 			},
+			gofumpt = true,
 			staticcheck = true,
 			buildFlags = { "-tags=ems bsc cht rakuten taipower wireinject" },
 		},

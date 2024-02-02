@@ -69,7 +69,10 @@ vim.cmd([[match ExtraWhitespace /\s\+$/]])
 -- golang
 vim.g.go_fmt_autosave = 1
 vim.g.go_fmt_command = "gopls"
-vim.g.go_gopls_gofumpt = 1
+-- vim.g.go_gopls_gofumpt = 1
+-- vim.g.go_fmt_options = {
+-- 	goimports = "-local $(go list -m)",
+-- }
 -- vim.g.go_fmt_command = "golines"
 -- vim.g.go_fmt_options = {
 -- 	golines = "-m 120",

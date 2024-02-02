@@ -31,6 +31,7 @@ mason_null_ls.setup({
 		"stylua",
 		"gofumpt",
 		"golines",
+		"goimports_reviser",
 		-- "goimports",
 		-- "gomodifytags",
 		-- python
@@ -68,10 +69,10 @@ null_ls.setup({
 		null_ls.builtins.formatting.golines.with({
 			extra_args = { "-m", 120 },
 		}),
-		null_ls.builtins.formatting.goimports,
-		-- XXX: leave gofumpt in basic.lua
+		null_ls.builtins.formatting.goimports_reviser,
+		-- null_ls.builtins.formatting.goimports,
+		-- null_ls.builtins.formatting.gofmt,
 		-- null_ls.builtins.formatting.gofumpt,
-
 		-- null_ls.builtins.completion.spell,
 		-- null_ls.builtins.diagnostics.flake8,
 	},
@@ -115,12 +116,51 @@ null_ls.setup({
 -- XXX: it works!
 -- https://neovim.discourse.group/t/lsp-formatting-doesnt-always-work/1884/20
 vim.api.nvim_create_augroup("LspFormatting", { clear = true })
+
+-- local util = require("vim.lsp.util")
+-- vim.lsp.buf.format = function(options)
+-- 	options = options or {}
+-- 	local bufnr = options.bufnr or vim.api.nvim_get_current_buf()
+-- 	local clients = vim.lsp.buf_get_clients(bufnr)
+--
+-- 	if options.filter then
+-- 		clients = options.filter(clients)
+-- 	elseif options.id then
+-- 		clients = vim.tbl_filter(function(client)
+-- 			return client.id == options.id
+-- 		end, clients)
+-- 	elseif options.name then
+-- 		clients = vim.tbl_filter(function(client)
+-- 			return client.name == options.name
+-- 		end, clients)
+-- 	end
+--
+-- 	clients = vim.tbl_filter(function(client)
+-- 		return client.supports_method("textDocument/formatting")
+-- 	end, clients)
+--
+-- 	if #clients == 0 then
+-- 		vim.notify("[LSP] Format request failed, no matching language servers.")
+-- 	end
+--
+-- 	local timeout_ms = options.timeout_ms or 1000
+-- 	for _, client in pairs(clients) do
+-- 		local params = util.make_formatting_params(options.formatting_options)
+-- 		local result, err = client.request_sync("textDocument/formatting", params, timeout_ms, bufnr)
+-- 		if result and result.result then
+-- 			util.apply_text_edits(result.result, bufnr, client.offset_encoding)
+-- 		elseif err then
+-- 			vim.notify(string.format("[LSP][%s] %s", client.name, err), vim.log.levels.WARN)
+-- 		end
+-- 	end
+-- end
+
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*",
 	group = "LspFormatting",
 	callback = function()
 		vim.lsp.buf.format({
-			timeout_ms = 2000,
+			timeout_ms = 5000,
 			filter = function(clients)
 				return vim.tbl_filter(function(client)
 					return pcall(function(_client)

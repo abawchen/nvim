@@ -63,8 +63,15 @@ packer.startup({
 		use("LinArcX/telescope-env.nvim")
 		use("nvim-telescope/telescope-ui-select.nvim")
 		-- treesitter
+		use("nvim-treesitter/nvim-treesitter")
+		-- dap
+		use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
 		use({
-			"nvim-treesitter/nvim-treesitter",
+			-- https://github.com/theHamsta/nvim-dap-virtual-text
+			"theHamsta/nvim-dap-virtual-text",
+			config = function()
+				require("nvim-dap-virtual-text").setup()
+			end,
 		})
 		-- d2
 		use("terrastruct/d2-vim")

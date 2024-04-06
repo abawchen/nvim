@@ -72,14 +72,22 @@ packer.startup({
 		use("numToStr/Comment.nvim")
 		-- nvim-autopairs
 		use("windwp/nvim-autopairs")
+		-- ray-x/go https://github.com/ray-x/go.nvim
 		use({
-			"fatih/vim-go",
-			run = ":GoUpdateBinaries",
-			ft = "go",
-			setup = function()
-				-- Read the following section and add what you need
+			"ray-x/go.nvim",
+			config = function()
+				require("go").setup()
 			end,
 		})
+		use("ray-x/guihua.lua")
+		-- use({
+		-- 	"fatih/vim-go",
+		-- 	run = ":GoUpdateBinaries",
+		-- 	ft = "go",
+		-- 	setup = function()
+		-- 		-- Read the following section and add what you need
+		-- 	end,
+		-- })
 		-- multicusor
 		use("mg979/vim-visual-multi")
 		-- icon-picker
@@ -92,12 +100,22 @@ packer.startup({
 				})
 			end,
 		})
-		-- markdown-preview
+		-- markdown-preview: https://github.com/iamcco/markdown-preview.nvim
 		use({
 			"iamcco/markdown-preview.nvim",
 			run = function()
 				vim.fn["mkdp#util#install"]()
 			end,
+		})
+		use({
+			"iamcco/markdown-preview.nvim",
+			run = "cd app && npm install",
+			setup = function()
+				vim.g.mkdp_filetypes = {
+					"markdown",
+				}
+			end,
+			ft = { "markdown" },
 		})
 		----------------- colorscheme ----------------
 		use("folke/tokyonight.nvim")

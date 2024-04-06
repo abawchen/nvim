@@ -80,21 +80,26 @@ packer.startup({
 		-- nvim-autopairs
 		use("windwp/nvim-autopairs")
 		-- ray-x/go https://github.com/ray-x/go.nvim
-		use({
-			"ray-x/go.nvim",
-			config = function()
-				require("go").setup()
-			end,
-		})
-		use("ray-x/guihua.lua")
 		-- use({
-		-- 	"fatih/vim-go",
-		-- 	run = ":GoUpdateBinaries",
-		-- 	ft = "go",
-		-- 	setup = function()
-		-- 		-- Read the following section and add what you need
+		-- 	"ray-x/go.nvim",
+		-- 	config = function()
+		-- 		require("go").setup({
+		-- 			verbose = true,
+		-- 			lsp_cfg = true,
+		-- 		})
 		-- 	end,
 		-- })
+		-- use("ray-x/guihua.lua")
+		use({
+			"fatih/vim-go",
+			run = ":GoUpdateBinaries",
+			ft = "go",
+			setup = function()
+				-- Read the following section and add what you need
+			end,
+		})
+		-- 'simondrake/gomodifytags',
+		use("simondrake/gomodifytags")
 		-- multicusor
 		use("mg979/vim-visual-multi")
 		-- icon-picker

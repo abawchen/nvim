@@ -61,6 +61,7 @@ vim.g.loaded_python3_provider = 0
 -- vim.o.list=true
 -- vim.o.listchars="eol:↵,trail:.,tab:  ,nbsp:␣"
 
+-- highlig tailing space
 -- https://stackoverflow.com/a/4617156
 -- https://www.reddit.com/r/neovim/comments/me35u9/lua_config_to_set_highlight/gsd5x20/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 vim.cmd([[highlight ExtraWhitespace ctermbg=red guibg=red]])

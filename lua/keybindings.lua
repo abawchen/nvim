@@ -145,24 +145,12 @@ pluginKeys.telescopeList = {
 	},
 }
 
--- comment, see ./lua/plugin-config/comment.lua
-pluginKeys.comment = {
-	toggler = {
-		line = "gcc", -- by line
-		block = "gbc", -- by block
-	},
-	-- Visual mode
-	opleader = {
-		line = "gc",
-		bock = "gb",
-	},
-}
--- ctrl + /
+-- comment: ctrl + /
 map("n", "<C-/>", "gcc", { noremap = false })
-map("v", "<C-/>", "gcc", { noremap = false })
+map("v", "<C-/>", "gc", { noremap = false })
 
 map("n", "<C-_>", "gcc", { noremap = false })
-map("v", "<C-_>", "gcc", { noremap = false })
+map("v", "<C-_>", "gc", { noremap = false })
 
 -- lsp, lspsaga
 -- https://stackoverflow.com/a/74584098

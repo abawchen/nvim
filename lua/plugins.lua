@@ -119,16 +119,6 @@ packer.startup({
 				vim.fn["mkdp#util#install"]()
 			end,
 		})
-		use({
-			"iamcco/markdown-preview.nvim",
-			run = "cd app && npm install",
-			setup = function()
-				vim.g.mkdp_filetypes = {
-					"markdown",
-				}
-			end,
-			ft = { "markdown" },
-		})
 		----------------- colorscheme ----------------
 		use("folke/tokyonight.nvim")
 		use("mhartington/oceanic-next")
@@ -161,12 +151,11 @@ packer.startup({
 		use("nvimdev/lspsaga.nvim")
 		-- formatter
 		use("mhartington/formatter.nvim")
-		use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
+		-- use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
 		use("williamboman/mason.nvim")
 		use({
 			"jay-babu/mason-null-ls.nvim",
 			requires = {
-				"williamboman/mason.nvim",
 				"jose-elias-alvarez/null-ls.nvim",
 			},
 		})

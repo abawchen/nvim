@@ -31,7 +31,7 @@ mason_null_ls.setup({
 		"stylua",
 		"gofumpt",
 		"golines",
-		"goimports_reviser",
+		-- "goimports_reviser",
 		-- "goimports",
 		-- "gomodifytags",
 		-- python
@@ -69,7 +69,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.golines.with({
 			extra_args = { "-m", 120 },
 		}),
-		null_ls.builtins.formatting.goimports_reviser,
+		-- null_ls.builtins.formatting.goimports_reviser,
 		-- null_ls.builtins.formatting.goimports,
 		-- null_ls.builtins.formatting.gofmt,
 		-- null_ls.builtins.formatting.gofumpt,

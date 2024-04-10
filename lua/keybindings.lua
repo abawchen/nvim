@@ -21,6 +21,10 @@ map("c", "<C-k>", "<C-p>", { noremap = false })
 -- paste without copying in the visual mode
 map("v", "p", '"_dP', opt)
 
+-- delete without copying
+map("n", "<leader>dd", '"_dd', opt)
+map("v", "<leader>dd", '"_dd', opt)
+
 -- 上下滚动浏览
 map("n", "<C-j>", "5j", opt)
 map("n", "<C-k>", "5k", opt)

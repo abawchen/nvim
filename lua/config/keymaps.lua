@@ -9,3 +9,6 @@ keymap.set("n", "<c-/>", "gcc", { remap = true })
 keymap.set("n", "<c-_>", "gcc", { remap = true })
 keymap.set("v", "<c-/>", "gc", { remap = true })
 keymap.set("v", "<c-_>", "gc", { remap = true })
+
+-- delete w/o copying: https://vi.stackexchange.com/a/26420/27441
+keymap.set("v", "d", '"_d')

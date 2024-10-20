@@ -7,11 +7,15 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   -- pattern = "*.java",
   -- command = "lua vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })",
   callback = function()
-    if vim.bo.ft == "java" then
+    if vim.bo.ft == "java" or vim.bo.ft == "python" then
       vim.lsp.buf.code_action({
         context = { only = { "source.organizeImports" } },
         apply = true,
       })
     end
+    -- work but need to confirm
+    -- if vim.bo.ft == "groovy" then
+    --   vim.cmd("! npm-groovy-lint --format %")
+    -- end
   end,
 })

@@ -7,9 +7,19 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   -- pattern = "*.java",
   -- command = "lua vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })",
   callback = function()
-    if vim.bo.ft == "java" or vim.bo.ft == "python" then
+    if vim.bo.ft == "java" then
       vim.lsp.buf.code_action({
         context = { only = { "source.organizeImports" } },
+        apply = true,
+      })
+    end
+    if vim.bo.ft == "python" then
+      vim.lsp.buf.code_action({
+        context = { only = { "source.organizeImports" } },
+        apply = true,
+      })
+      vim.lsp.buf.code_action({
+        context = { only = { "source.fixAll" } },
         apply = true,
       })
     end
